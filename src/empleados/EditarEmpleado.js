@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export default function EditarEmpleado() {
@@ -18,14 +18,14 @@ export default function EditarEmpleado() {
 
     const{nombre, departamento, sueldo} = empleado
 
-    useEffect(()=>{
-        cargarEmpleado();
-    },[])
-
-    const cargarEmpleado = async () => {
+    const cargarEmpleado = useCallback(async () => {
         const resultado = await axios.get(`${urlBase}/${id}`)
         setEmpleado(resultado.data);
-    }
+    }, [id]);
+    
+    useEffect(()=>{
+        cargarEmpleado();
+    },[cargarEmpleado])
 
     const onInputChange = (e) => {
         //spread operator ... (expandir los atributos)
