@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 export default function EditarEmpleado() {
 
-    const urlBase = "http://localhost:8081/rrss-app/empleados";
+    const urlBase = "https://recursos-humanos-springboot-production.up.railway.app/rrss-app/empleados";
 
     let navegacion = useNavigate();
 

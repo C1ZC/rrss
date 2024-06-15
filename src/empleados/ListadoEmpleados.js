@@ -5,7 +5,7 @@ import { NumericFormat } from 'react-number-format';
 
 export default function ListadoEmpleados() {
 
-        const urlBase = "http://localhost:8081/rrss-app/empleados"
+        const urlBase = "https://recursos-humanos-springboot-production.up.railway.app/rrss-app/empleados"
         const[empleados, setEmpleados] = useState ([]);
         useEffect(() => {
             cargarEmpleados();

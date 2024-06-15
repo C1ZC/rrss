@@ -17,7 +17,7 @@ export default function AgregarEmpleado() {
         }
         const onSubmit = async (e) => {
             e.preventDefault();
-            const urlBase = "http://localhost:8081/rrss-app/empleados"
+            const urlBase = "https://recursos-humanos-springboot-production.up.railway.app/rrss-app/empleados"
             await axios.post(urlBase, empleado);
             Navegacion('/');
         }
